@@ -1,0 +1,122 @@
+<div ng-controller="formController">
+
+    
+    <script type="text/javascript">
+        function validate()
+        {
+            alert("Working")
+            var name = document.getElementById('name');
+            var number = document.getElementById('number');
+            var email = document.getElementById('email');
+            var email2 = document.getElementById('email2');
+            var message = document.getElementById('message');
+            
+            var validName = false;
+            var validNumber = false;
+            var validEmail = false;
+            var validEmail2 = false;
+            var validMessage = false;
+            
+            if (name.value != '')
+                {
+                    validName = true;
+                    
+                }
+            else
+            {
+                return false;
+                alert('Name field must not be empty')
+            }
+            if (validNumber != '')
+                {
+                    validNumber = true;
+                }
+             else
+            {
+                return false;
+                alert('Number field must not be empty')
+            }
+            if (ValidateEmail(email) == true)
+                {
+                    validEmail = true;
+                }
+             else
+            {
+                return false;
+                alert('Email field must not be empty')
+            }
+            if (email == email2)
+                {
+                    validEmail2 = true;
+                }
+             else
+            {
+                return false;
+                alert('Email fields must match')
+            }
+            if (message != '')
+                {
+                    validMessage = true;
+                }
+             else
+            {
+                return false;
+                alert('Message field must not be empty')
+            }
+            
+            if (validName == true && validNumber == true && validEmail == true && validEmail2 == true && validMessage == true)
+                {
+                    return true;
+                }
+            else 
+            {
+               return false; 
+            }
+        }
+        
+     function ValidateEmail(mail) 
+        {
+         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+          {
+            return (true)
+          }        
+            return (false)
+        }
+            
+    </script>
+    
+    
+    
+    <h1>Contact Form</h1>
+    
+      <form novalidate class="simple-form" id="userForm" method="GET" onsubmit="return validate()" >
+            <label class="text-success" ng-show="successInsert">{{successInsert}}success</label>
+            <Table align="center" class="table" width="100%">
+            <tr>
+                <td width= 20% align="right"><label>Name</label></td>
+                <td width="80%" colspan="2"><input id="name" type="text" name="customerName" ng-model="insert.customerName" size="100%"/></td>
+                <td>colspan="2"><br/><span class="text-danger" ng-show="errorC ustomerName">{{errorCustomerName}}error</span></td>
+            </tr>          
+            <tr>
+                <td width= 20% align="right"><label>Number</label></td>
+                <td width="80%" colspan="2"><input id="number" type="tel" name="customerNumber" ng-model="insert.customerNumber" size="100%"/><br/><span class="text-danger" ng-show="errorCustomerNumber">{{errorCustomerNumber}}</span></td>
+            </tr>        
+            <tr>
+                <td width= 20% align="right"><label>Email</label></td>
+                <td width="80%" colspan="2"><input id="email" type="email" namne="customerEmailAddress" ng-model="insert.customerEmailAddress" size="100%"/><br/><span class="text-danger" ng-show="errorCustomerEmailAddress">{{errorCustomerEmailAddress}}</span></td>
+            </tr>  
+            <tr>
+                <td width= 20% align="right"><label>Confirm Email</label></td>
+                <td width="80%" colspan="2"><input id="email2" type="email" namne="customerEmailAddress2" ng-model="insert.customerEmailAddress2" size="100%"/><br/><span class="text-danger" ng-show="errorCustomerEmailAddress2">{{errorCustomerEmailAddress2}}</span></td>
+            </tr>  
+            <tr>
+                <td width= 20% align="right"><label>Message</label></td>
+                <td width="80%" colspan="2"><textarea id="message" ng-model="insert.customerMessage" style="width:100%;" rows="20" name="customerMessage" form="contactForm">Enter text here...</textarea><br/><span class="text-danger" ng-show="errorCustomerMessage">{{errorCustomerMessage}}</span></td>    
+            </tr>  
+            <tr>
+                <td align="right" colspan="3"><input type="submit" name="submit" id="submit" value="Submit"</td>
+            </tr>
+
+            </Table>
+        </form> 
+</div>

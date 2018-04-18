@@ -1,0 +1,95 @@
+body {
+  padding-top: 70px;
+  /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */ }
+
+.slide-image {
+  width: 100%; }
+
+.carousel-holder {
+  margin-bottom: 30px; }
+
+.carousel-control,
+.item {
+  border-radius: 4px; }
+
+.caption {
+  height: 130px;
+  overflow: hidden; }
+  .caption h4 {
+    white-space: nowrap; }
+
+.thumbnail {
+  padding: 0; }
+  .thumbnail img {
+    width: 100%; }
+  .thumbnail .caption-full {
+    padding: 10px;
+    color: gold; }
+
+.ratings {
+  padding-right: 10px;
+  padding-left: 10px;
+  color: lightblue; }
+
+footer {
+  margin: 50px 0; }
+
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:300');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.gallery {
+  width: 640px;
+  margin: 0 auto;
+  padding: 5px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.3);
+}
+
+.gallery > div {
+  position: relative;
+  float: left;
+  padding: 5px;
+}
+
+.gallery > div > img {
+  display: block;
+  width: 200px;
+  transition: .1s transform;
+  transform: translateZ(0); /* hack */
+}
+
+.gallery > div:hover {
+  z-index: 1;
+}
+
+.gallery > div:hover > img {
+  transform: scale(1.7,1.7);
+  transition: .3s transform;
+}
+
+.cf:before, .cf:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.cf:after {
+  clear: both;
+}
+
+h1 {
+  margin: 40px 0;
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+}
+
+
+
+/*# sourceMappingURL=output.css.map */

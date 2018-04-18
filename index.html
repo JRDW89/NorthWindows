@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+
+<head>
+    
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Shop Homepage - Start Bootstrap Template</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <!-- We have converted our CSS into SASS-->
+  <link href="css/output.css" rel="stylesheet">
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+    
+<body>
+  
+    
+<?php include 'handler.php';?>
+  <!--(A)############################################ Navigation ##############################################################-->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+     
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+          
+            
+        
+          <div><a class="navbar-brand" href="#/home">North Windows</a></div>
+          
+        
+      </div>
+     
+        <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav" ng-controller="homePageNavigation">
+          <li ng-repeat="page in pages">
+            <a ng-href="{{page.href}}">{{ page.page }}</a>
+          </li>
+        </ul>
+     
+          <!-- Google Custom Search Element → -->
+<div id=”cse” style=”width:100%;”>Loading</div>
+<script src=”http://www.google.com/jsapi” type=”text/javascript”></script>
+<script type=”text/javascript”>google.load(‘search’, ‘1’);
+          google.setOnLoadCallback(function(){var cse = new google.search.
+          CustomSearchControl();cse.draw(‘cse’);}, true);</script>
+     </div>
+        
+    
+        
+        
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+<!--#########################################################################################################################-->
+  
+  
+  
+  <!--(B)#####################SideBar#############################-->
+  <div class="container">
+    <div class="row">  
+        <div class="col-md-3">        
+                      
+            <p class="lead"> Products </p>
+            <div class="list-group"  ng-controller="homePageNavigation">
+            <a class="list-group-item"  ng-repeat="product in products" ng-href="{{product.href}}" >{{product.product}}</a>         
+            </div>
+            
+            <p class="lead">Services</p>
+            <div class="list-group"  ng-controller="homePageNavigation">
+            <a class="list-group-item"  ng-repeat="service in services" ng-href="{{service.href}}" >{{service.service}}</a>         
+            </div>
+                        
+        </div>
+<!--######################################################-->      
+    
+                
+       <div class="col-md-9" ng-controller="homePageNavigation">
+        <div ng-view>
+
+        </div>
+        </div>
+    </div>
+ 
+<!--(C)##########################Page routed content############################--> 
+       
+<!--######################################################-->    
+  
+  </div>
+  
+  
+  
+  
+  
+<!--(D)######################Footer################################-->    
+  <div class="container">
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="row">
+        <div class="col-lg-12">
+            <p>Disclaimers and other legal information</p>
+            <p>Social media, Connections, Certification etc</p>
+          <p>Copyright &copy; Your Website 2014</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+<!--######################################################-->    
+  
+  
+  
+  
+  
+  
+</body>
+
+
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Angular.js -->
+<script src="js/angular.min.js" type="text/javascript"></script>
+<script src="js/angular-route.min.js" type="text/javascript"></script>
+<!-- <script src="js/angular.js" type="text/javascript"></script> -->
+<script src="js/angularScripts.js" type="text/javascript"></script>
+
+
+
+</html>

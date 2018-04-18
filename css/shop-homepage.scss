@@ -1,0 +1,54 @@
+$primary-color: lightblue;
+$secondary-color: gold;
+$padding-ratings: 10px;
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.slide-image {
+    width: 100%;
+}
+
+.carousel-holder {
+    margin-bottom: 30px;
+}
+
+.carousel-control,
+
+.item {
+    border-radius: 4px;
+}
+
+.caption {
+   height: 130px;
+   overflow: hidden;
+  
+h4 {
+    white-space: nowrap;
+  } 
+  
+}
+
+.thumbnail {
+  padding: 0;
+  
+  img {
+    width: 100%
+  }
+  
+  .caption-full {
+    padding: $padding-ratings;
+    color: $secondary-color;
+  }
+}
+
+.ratings {
+    padding-right: $padding-ratings;
+    padding-left: $padding-ratings;
+    color: $primary-color;
+}
+
+footer {
+    margin: 50px 0;
+}
